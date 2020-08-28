@@ -1,0 +1,8 @@
+# DOL
+*.dol
+
+# EXE
+*.exe
+
+# IDE
+*.vscode
