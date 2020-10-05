@@ -27,12 +27,14 @@ void CDolHeader::SwapEndian() {
 
 void CDolHeader::Parse(char* filePath) {
     fstream fh;
+
     fh.open(filePath, ifstream::in | ifstream::binary);
     fh.read((char *)this, DOL_HEADER_SIZE);
     fh.close();
-    //return *this;
+    this->SwapEndian();
 }
 
 void CDolHeader::Parse(void* buffer) {
     memcpy(this, buffer, sizeof(buffer));
+    this->SwapEndian();
 }

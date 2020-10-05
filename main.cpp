@@ -18,8 +18,6 @@ int main(int argc, char* argv[]) {
         return 1;
     }
 
-    header.SwapEndian();
-
     for (int i = 0; i < TEXT_SECTION_SIZE; i++) {
         if (header.m_section_offsets.m_text_offset[i] != 0x0) {
             printf(".text%d\n", i);
